@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Find your Book Buddy</title>  
+
+        <!-- Stylesheets -->        
+        <link rel="stylesheet" type="text/css" href="./vendor/skeleton/normalize.css"/>
+        <link rel="stylesheet" type="text/css" href="./vendor/skeleton/skeleton.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+
+        <!-- Load P5 --> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+              
+        <!-- Load d3.js -->
+        <script src="https://d3js.org/d3.v6.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+
+        <!-- text highlighter --> 
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.0.0/papaparse.min.js"></script>
+         
+        <!-- Fonts -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+         
+    </head>
+
+    <body data-description2="./csv/description2.csv" data-wordCounts="./csv/word_counts-description.csv">
+       <script>
+            // get datas from the csv files and store them in soem var, so i can use them in the scripts
+            const description2Url = document.body.getAttribute("data-description2");
+            const wordCountsUrl = document.body.getAttribute("data-wordCounts");
+        </script>
+
+
+        <header class="header">
+            <div class="container">
+                <nav class="header-navbar">
+                    <ul class="header-navbar-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#service">My Library</a></li>
+                        <li><a href="#clients">Recommended Users</a></li>
+                        <li><a href="#team">Recommended Books</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div class="container">
+                <div class="slogan">
+
+                    <div class="slogan-bottom">
+                        Find Your Book Buddy
+                    </div>
+                    <div class="slogan-top">
+                        Explore your own Library
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <div class="library">
+            <div class="container">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h2 class="TitelDataviz">Discover your <strong>library</strong></h2>
+                        <main></main>
+                        <script src="js/sketch.js"></script>
+                        <button id="AddSomeBooks">
+                            <span id="ButtonAddBooks">+</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+         </div>
+
+         
+         <div class="NewBooks">
+            <div class="container">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h3 class="Recommendations"> Do you want to fill your library with new <strong>recommendations</strong> ?</h3>
+
+                        <p>
+                            We have developed a unique recommendation system with which we find users 
+                            who have the most similar taste in books to you. We then show you transparently 
+                            which books this user reads and thinks they are good, you can then choose your own 
+                            recommendations as if you were at a friend with the same taste for books and you 
+                            stand in front of his bookshelf, isn't it realy cool?
+                            It takes a few minutes but it's worth to wait, trust me :)
+                        </p>
+                        <button id="recommendation-button">Get recommendation</button>
+                        
+
+                        <div class="Congrats">
+
+                            <h3>Congrats, you get some nice Recomendations!</h3>
+                            <p>
+                                To get a better selection, you can mark the words that interests you at the moment, 
+                                these serve as a filter so that not all books are displayed to you.
+                                This filer searches through all the book descriptions of the books read by your top users.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="wordfilter">
+            <div class="container">   
+                <div class="row">
+                    <div class="twelve columns">
+                        <ul id="word-list"></ul>
+                        <button id="show-more-button">Show more</button>
+                        <script src="js/button-expand-text.js"></script>
+
+                        <div id="selected-words"></div> <!-- Add a new div element to display selected words -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="filteredtext">
+            <div class="container">   
+                <div class="row">
+                    <div class="twelve columns">
+                        <ul id="text-list"></ul>
+                        <script src="js/highlight.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="filter">
+            <div class="container">   
+                <div class="row">
+                    <div class="twelve columns">
+                        <label for="genre-filter">Filter by Genre:</label>
+                        <select id="genre-filter">
+                            <option value="">All Genres</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="poetry">poetry</option>
+                            <option value="children">children</option>
+                            <option value="nonfiction">nonfiction</option>
+                            <option value="youngadult">youngadult</option>
+                            <option value="comics graphic">comics graphic</option>
+                            <option value="fantasy paranormal">fantasy paranormal</option>
+                            <option value="history historical fiction biography">history historical fiction biography</option>
+                            <option value="mystery thriller crime">mystery thriller crime</option>
+                            <option value="romance">romance</option>
+                        </select>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bubble-chart">
+            <div class="container">   
+                <div class="row sticky">
+                    <div class="twelve columns sticky">
+                        <h2 class="service-title sticky" >Your <strong>Recommendations:</strong></h2>
+                        <p>hover over the items for more information</p>
+                    </div>
+                </div>
+
+                <div class="row sticky">
+                    <div class="seven columns sticky">
+
+                        <svg width="550" height="550"></svg>                      
+                        <script src="js/bubblechart.js"></script>   
+                    </div>
+
+
+
+                    <div class="five columns">        
+
+                        <div class="table-container">
+                            <div class="scrollbar-container">
+                            <table>
+                            <thead>
+                                <tr class="TableFirst">
+                                    <td style="width: 25%"><strong>Title:</strong></td>
+                                    <td colspan="3" style="width: 75%" class="book-title"></td>
+                                </tr>
+
+                                <tr class="TableSecond">
+                                    <td ><strong>Author:</strong></td>
+                                    <td colspan="4" class="book-author"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Genre:</strong></td>
+                                    <td colspan="4" class="book-genre"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>Pages:</strong></td>
+                                    <td class="book-pages"></td>
+                                    <td><strong>ISBN:</strong></td>
+                                    <td class="book-isbn"></td>
+                                </tr>
+
+                                <tr>
+                                    <td id="beschreibung" colspan="4"><strong>Description:</strong></td>
+                                </tr>
+
+                            </thead>
+                            
+                            <tbody>
+
+                                <tr>
+                                    <td colspan="4" class="book-description"></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>User:</strong></td>
+                                    <td class="book-user"></td>
+                                    <td><strong>Rating:</strong></td>
+                                    <td class="book-rating"></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="4"><strong>Review:</strong></td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="4" class="book-review"></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="container">
+                <hr class="footer-hr"/>
+                <p>Umgesetzt im Rahmen des Autorenprojekts / CAS Datavizualisation von Tali Bhor / <a href="#">Nach oben</a> </p>
+            </div>
+        </div>
+
+
+        <script src="js/button-get-recommendation.js"></script>
+
+    </body>
+</html>

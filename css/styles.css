@@ -1,0 +1,498 @@
+body{
+    font-family: 'Mulish', sans-serif;
+}
+
+p {
+    color: rgb(21, 21, 21);
+    text-align: justify;
+}
+
+h1{
+    color: black;
+    float: left;
+}
+
+h2{
+    color: black;
+    float: left;
+}
+
+button:hover{
+    background-color: rgb(176, 123, 255, 10%);
+}
+
+
+/** 
+* Header Bereich
+*/
+
+.header {
+    background-size: cover;
+    background-position: 50% 62%;
+    background-color: rgb(21, 21, 21);
+}
+
+.header-navbar-links {
+    color: white;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.header-navbar-links li{
+    float: left;
+    list-style-type: none;
+    padding-left: 26px;
+    text-shadow: 0px 0px 2px black;
+    margin-bottom: 0px;
+    
+}
+
+.header-navbar-links a{
+    color: white;
+    text-decoration: none;
+}
+
+.header-navbar-links a:hover{
+    color: rgb(200, 200, 200);
+    text-decoration: underline;
+    transition: all 0.5s;
+}
+
+.header-brand-wrapper {
+    margin-top: 50px;
+    float: left;
+}
+
+.header-brand {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 150%;
+    margin-top: -9%;
+    display: block;
+    text-shadow: 0px 0px 2px black;
+
+}
+
+
+
+
+.slogan {
+    color: white;
+    text-align: center;
+    padding-top: 0px;
+    margin-top: 80px;
+    margin-bottom: 90px;
+    text-shadow: 0px 0px 2px black;
+}
+
+.slogan-top{
+    font-weight:100;
+    font-size: 170%;
+}
+
+.slogan-bottom{
+    font-size: 300%;
+    font-weight: bold; 
+}
+
+.slogan-button{
+    margin-top: 100px;
+    color: white;
+    text-shadow: 0px 0px 2px black;  
+}
+
+.slogan-button:hover{
+    color: white;
+    text-shadow: 0px 0px 2px black;  
+}
+
+
+
+
+
+
+/**
+* Library Bereich
+*/
+.TitelDataviz{
+    margin-bottom: 50px;
+}
+
+.library{
+    color: brown;
+    text-align: center;
+    margin-top: 250px;
+    margin-bottom: 0px;
+}
+
+.NewBooks{
+    margin-top: 700px;
+    margin-bottom: 50px;
+}
+
+#AddSomeBooks{
+    float: right;
+    height: 200%;
+    padding-left: 14px;
+    padding-right: 13px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    border-radius: 50px;
+}
+
+.Recommendations{
+    float: none;
+}
+
+
+#ButtonAddBooks{
+    font-size: 200%;
+}
+
+
+.Congrats {
+    display: none;
+  }
+
+#recommendation-button{
+    margin-bottom: 300px;
+  }
+
+ .wordfilter, .filteredtext, .bubble-chart {
+    display: none;
+  }
+
+
+
+
+/**
+* Wortwolke Bereich
+*/
+.wordfilter{
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
+
+#word-list {
+    max-height: 400px;
+    overflow: hidden;
+    float: left;
+    font-weight: 700;
+    list-style-type: none;
+    margin-bottom: px;
+    text-align-last: justify; /* add this property to justify the text */
+    display: flex; /* add this property to enable line wrapping */
+    flex-wrap: wrap; /* add this property to enable line wrapping */
+  }
+  
+  
+#word-list li {
+  margin-right: 7px;
+  margin-bottom: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: 90%;
+  text-align: justify; /* add this property to justify the text */
+  flex-grow: 1; /* add this property to enable word spacing */
+}
+
+.highlighted{
+    background-color: rgb(176, 123, 255, 30%);
+    margin-right: 7px; /* set the desired margin value */
+
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.block{
+    text-align: justify;
+}
+
+
+
+/**
+* text-list Bereich
+*/
+.filteredtext{
+    color: black;
+    display: none;
+}
+
+.filter{
+    display: none;
+}
+
+#text-list{
+    float: left;
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+#text-list li {
+    float: left;
+    margin-right: 7px; /* set the desired margin value */
+    padding-left: 3px;
+    padding-right: 3px;
+    
+  }
+
+
+
+
+
+
+/**
+* bubble-chart Bereich
+*/
+
+.bubble-chart{
+    margin-top: 50px;
+    padding-top: 100px;
+}
+
+.informations .informations1 .informations2 .informations3 .informations4{
+    font-size: 0.9em;;
+}
+
+.informations p{
+    margin-bottom: 10px;
+}
+
+#sr1{
+    margin-left: 0px;
+}
+#sr2{
+    margin-left: 0px;
+}
+#sr3{
+    margin-left: 0px;
+}
+#sr4{
+    margin-left: 0px;
+}
+
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 50px;
+    padding: 0px;
+
+  }
+  
+
+  .sticky-row {
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+
+
+
+
+
+
+.table-container {
+  position: relative;
+  margin-top: 60px; /* Hier kannst du den Abstand zum oberen Rand der Seite festlegen */
+  height: calc(100vh - 300px); /* Hier wird die Höhe des Containers berechnet, indem die Höhe des Bildschirms abzüglich des Abstands vom oberen Rand der Seite subtrahiert wird */
+  overflow-y: scroll; /* Hinzufügen einer vertikalen Scrollleiste für den Container */
+  margin-bottom: 30px;
+}
+
+table {
+  background: #fff;
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  display: table; /* Add this */
+}
+
+thead,
+tbody {
+  display: table-header-group; /* Change to table-header-group and table-row-group */
+}
+
+thead {
+  position: sticky;
+  top: 0px;
+  background: #fff;
+  z-index: 1;
+}
+
+th,
+td {
+  width: 20%;
+  border: none;
+  text-align: left;
+  padding-top: 0px;
+  padding-bottom: 12px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+th:first-child,
+td:first-child {
+  width: 20%;
+}
+
+tbody {
+  max-height: 300px; /* Set your desired height here */
+  overflow-y: scroll;
+}
+
+td{
+    text-align: justify;
+    vertical-align: top;
+}
+
+td#beschreibung {
+  border-bottom: 1px solid #ccc;
+}
+
+
+
+
+.table-container::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+    border-radius: 5px; /* Add rounded corners to the scrollbar */
+  }
+  
+  .table-container::-webkit-scrollbar-thumb {
+    background-color: rgba(103, 63, 162, 0.2);
+    border-radius: 5px; /* Add rounded corners to the scrollbar thumb */
+  }
+  
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #000;
+  }
+.scrollbar-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-right: 5px; /* Abstand zwischen Tabelle und Scrollbalken */
+}
+
+
+
+
+
+
+/**
+* dataviz bereich
+*/
+
+
+
+.tooltip {
+    position: absolute;
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .tooltip-background {
+    fill: #333;
+    opacity: 0.8;
+    width: 200px;
+    height: 80px;
+}
+
+.tooltip-text {
+    fill: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
+
+
+
+/**
+* Service Bereich
+*/
+
+.service {
+    padding-top: 100px;
+    padding-bottom: 90px;
+}
+
+.service-title{
+    font-weight: lighter;
+    color: rgb(30, 30, 30);
+    float: none;
+
+}
+
+
+.service-icon {
+    color: rgb(224, 224, 224);
+    font-size: 1500%;
+    text-align: center;
+    margin-top: -20%;
+    margin-bottom: -20%;
+}
+
+
+
+
+
+
+
+/**
+* fotter
+*/
+
+.footer {
+    margin-top: 100px;
+    background-color:rgb(21, 21, 21);
+    text-align: center;
+    font-weight: lighter;
+}
+.footer p{
+    color: white;
+}
+
+.footer-hr{
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* Target the scrollbar element for all container elements */
+::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+    border-radius: 5px; /* Add rounded corners to the scrollbar */
+  }
+    
+  /* Add a darker color to the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(103, 63, 162, 0.3);
+    border-radius: 5px; /* Add rounded corners to the scrollbar thumb */
+  }
+  
+  /* On hover, add a black background color to the scrollbar thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #000;
+  }
+  
