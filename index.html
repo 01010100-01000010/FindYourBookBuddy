@@ -26,6 +26,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
          
     </head>
 
@@ -53,16 +55,17 @@
             <div class="container">
                 <div class="slogan">
 
-                    <div class="slogan-bottom">
+                    <div class="slogan-top">
                         Find Your Book Buddy
                     </div>
-                    <div class="slogan-top">
-                        Explore your own Library
+                    <div class="slogan-bottom">
+                        Discover Personalized Book Recommendations Based on Your Tastes.
                     </div>
 
                 </div>
             </div>
         </header>
+        
 
 
         <div class="library">
@@ -70,11 +73,17 @@
                 <div class="row">
                     <div class="twelve columns">
                         <h2 class="TitelDataviz">Discover your <strong>library</strong></h2>
+                        <img src="img/Legende.png" alt="Legende" class="my-image">
+
                         <main></main>
                         <script src="js/sketch.js"></script>
+
                         <button id="AddSomeBooks">
                             <span id="ButtonAddBooks">+</span>
                         </button>
+
+                        <img src="img/InfoAddBook.png" alt="InfoAddBook" class="my-image2">
+
 
                     </div>
                 </div>
@@ -101,9 +110,9 @@
 
                         <div class="Congrats">
 
-                            <h3>Congrats, you get some nice Recomendations!</h3>
+                            <h3>Congrats, you get some nice <strong>recomendations </strong>!</h3>
                             <p>
-                                To get a better selection, you can mark the words that interests you at the moment, 
+                                To get a better selection, you need to mark the words that interests you at the moment, 
                                 these serve as a filter so that not all books are displayed to you.
                                 This filer searches through all the book descriptions of the books read by your top users.
                             </p>
@@ -167,87 +176,82 @@
 
 
         <div class="bubble-chart">
-            <div class="container">   
+            <div class="container">  
+
                 <div class="row sticky">
                     <div class="twelve columns sticky">
-                        <h2 class="service-title sticky" >Your <strong>Recommendations:</strong></h2>
-                        <p>hover over the items for more information</p>
+                        <h2 class="service-title sticky" >Your <strong>recommendations:</strong></h2>
+                        <p>The Size shows the amount of words contains in the Description of this book.<br>
+                        The darker the color, the higher the rating from the user.<br>
+                        Hover over the elements for more informations.</p>
+
                     </div>
                 </div>
 
                 <div class="row sticky">
-                    <div class="seven columns sticky">
 
+                    <div class="seven columns sticky">
                         <svg width="550" height="550"></svg>                      
                         <script src="js/bubblechart.js"></script>   
                     </div>
 
-
-
                     <div class="five columns">        
-
                         <div class="table-container">
                             <div class="scrollbar-container">
-                            <table>
-                            <thead>
-                                <tr class="TableFirst">
-                                    <td style="width: 25%"><strong>Title:</strong></td>
-                                    <td colspan="3" style="width: 75%" class="book-title"></td>
-                                </tr>
+                                <table>
 
-                                <tr class="TableSecond">
-                                    <td ><strong>Author:</strong></td>
-                                    <td colspan="4" class="book-author"></td>
-                                </tr>
+                                    <thead>
 
-                                <tr>
-                                    <td><strong>Genre:</strong></td>
-                                    <td colspan="4" class="book-genre"></td>
-                                </tr>
+                                        <tr class="TableFirst">
+                                            <td style="width: 25%"><strong>Title:</strong></td>
+                                            <td colspan="3" style="width: 75%" class="book-title"></td>
+                                        </tr>
 
-                                <tr>
-                                    <td><strong>Pages:</strong></td>
-                                    <td class="book-pages"></td>
-                                    <td><strong>ISBN:</strong></td>
-                                    <td class="book-isbn"></td>
-                                </tr>
+                                        <tr class="TableSecond">
+                                            <td ><strong>Author:</strong></td>
+                                            <td colspan="4" class="book-author"></td>
+                                        </tr>
 
-                                <tr>
-                                    <td id="beschreibung" colspan="4"><strong>Description:</strong></td>
-                                </tr>
+                                        <tr>
+                                            <td><strong>Genre:</strong></td>
+                                            <td colspan="4" class="book-genre"></td>
+                                        </tr>
 
-                            </thead>
-                            
-                            <tbody>
+                                        <tr>
+                                            <td><strong>Pages:</strong></td>
+                                            <td class="book-pages"></td>
+                                            <td><strong>ISBN:</strong></td>
+                                            <td class="book-isbn"></td>
+                                        </tr>
 
-                                <tr>
-                                    <td colspan="4" class="book-description"></td>
-                                </tr>
+                                        <tr> <td id="beschreibung" colspan="4"><strong>Description:</strong></td> </tr>
 
-                                <tr>
-                                    <td><strong>User:</strong></td>
-                                    <td class="book-user"></td>
-                                    <td><strong>Rating:</strong></td>
-                                    <td class="book-rating"></td>
-                                </tr>
+                                    </thead>
+                                    
+                                    <tbody>
 
-                                <tr>
-                                    <td colspan="4"><strong>Review:</strong></td>
-                                </tr>
+                                        <tr> <td colspan="4" class="book-description"></td> </tr>
 
-                                <tr>
-                                    <td colspan="4" class="book-review"></td>
-                                </tr>
+                                        <tr>
+                                            <td><strong>User:</strong></td>
+                                            <td class="book-user"></td>
+                                            <td><strong>Rating:</strong></td>
+                                            <td class="book-rating"></td>
+                                        </tr>
 
+                                        <tr> <td colspan="4"><strong>Review:</strong></td> </tr>
 
-                            </tbody>
-                        </table>
-                        
-                    </div>
-                    
+                                        <tr> <td colspan="4" class="book-review"></td> </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>  
                     </div>
 
                 </div>
+
             </div>
         </div>
 
@@ -255,7 +259,7 @@
         <div class="footer">
             <div class="container">
                 <hr class="footer-hr"/>
-                <p>Umgesetzt im Rahmen des Autorenprojekts / CAS Datavizualisation von Tali Bhor / <a href="#">Nach oben</a> </p>
+                <p>Umgesetzt im Rahmen des Autorenprojekts / CAS Datavizualisation von Tali Bhor </p>
             </div>
         </div>
 
