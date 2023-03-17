@@ -190,6 +190,9 @@ function draw() {
   let x = Rand;
   let y = Regal;
 
+  let tooltipContainer = createGraphics(CanvasB, CanvasH);
+
+
   for (let i = 0; i < Books.length; i++) {
     let bookWidth = Books[i].Std * 3;
     let bookHeight = Books[i].Rating * 10;
@@ -200,6 +203,7 @@ function draw() {
       x = Rand;
     }
 
+
     // Text bei Mouseover
     if (
       mouseX > x &&
@@ -207,16 +211,61 @@ function draw() {
       mouseY > y - bookHeight &&
       mouseY < y
     ) {
-      noStroke();
-      fill(0);
-      textSize(15);
-      text("Titel: " + Books[i].Title + " | Author: " + Books[i].Author, x, y + 25);
-      stroke(0);
+      let padding = 8;
+      let borderRadius = 4;
+      let maxWidth = 250;
+      let tooltipText = "Titel: " + Books[i].Title + " -|||- Author: " + Books[i].Author + " -|||- Genre: " + Books[i].Genre ;
+      tooltipContainer.clear();
+    
+      tooltipContainer.textSize(15);
+    
+      let words = tooltipText.split(' ');
+      let lines = [];
+      let currentLine = words[0];
+    
+      for (let j = 1; j < words.length; j++) {
+        let word = words[j];
+        let nextLine = currentLine + ' ' + word;
+        if (tooltipContainer.textWidth(nextLine) < maxWidth) {
+          currentLine = nextLine;
+        } else {
+          lines.push(currentLine);
+          currentLine = word;
+        }
+      }
+    
+      lines.push(currentLine);
+    
+      let lineHeight = 20;
+      let textHeight = lineHeight * lines.length;
+    
+      tooltipContainer.fill("#333");
+      tooltipContainer.noStroke();
+      tooltipContainer.rect(mouseX, mouseY -2, maxWidth + padding * 2, textHeight + padding * 2, borderRadius);
+    
+      tooltipContainer.fill(255);
+      for (let j = 0; j < lines.length; j++) {
+        tooltipContainer.text(lines[j], mouseX + padding, mouseY + 10 + padding + lineHeight * j);
+      }  
+
       fill(176, 123, 255, 77);
+
     }
+    
+
+
+      
 
     // Bücher Formen
     rect(x, y + 1 - bookHeight, bookWidth, bookHeight);
+
+    if (i === 0 || Books[i].Year !== Books[i - 1].Year) {
+      noStroke()
+      fill(0);
+      textSize(15);
+      text(Books[i].Year, x, y + 20);
+    }
+
 
     // Add a rectangle in the top-left corner if the book type is "Hörbuch"
     if (Books[i].Typ === "Hörbuch") {
@@ -230,14 +279,21 @@ function draw() {
       triangle(x+0.75, y - bookHeight + 10, x+0.75, y - bookHeight + 2, x + 9, y - bookHeight + 2);
     }
 
+
     // 4px Abstand zwischen den einzelnen Bücher
-    x += bookWidth + 4;
+    if (i < Books.length - 1 && Books[i].Year !== Books[i + 1].Year) {
+      x += bookWidth + 20;
+    } else {
+      x += bookWidth + 4;
+    }
+
 
     // Regalbrett
     noStroke();
     fill(20);
     rect(Rand - 5, y, CanvasB - Rand * 2 + 10, 6);
 
+    
     // Aussehen Bücher
     if (i < Books.length - 1 && Books[i+1].Art === "Merkliste") {
       stroke(0);
@@ -249,4 +305,6 @@ function draw() {
     }
     
   }
+  image(tooltipContainer, 0, 0);
+
 }
