@@ -163,9 +163,10 @@ function updateChart(data) {
       // Update the user and rating cells
       d3.select('.book-user').text(user_id);
       d3.select('.book-rating').text(rating);
+
+      // Show the table
+      d3.select('.table-container').style('display', 'block');
     }
-    
-    
     
     tooltip.transition()
         .duration(500)
@@ -178,8 +179,3 @@ function updateChart(data) {
             // <p><strong>Book_id:</strong> ${book_id}</p>
             // <p><strong>ID:</strong> ${id}</p>
             // <img src="${image_url}" alt="Book cover">
-
-
-
-
-

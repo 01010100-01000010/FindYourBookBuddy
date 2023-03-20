@@ -189,6 +189,10 @@ button:hover{
     float: right;
     margin-top: 20px;
 }
+.words:hover {
+    cursor: pointer;
+  }
+  
   
 
 
@@ -286,10 +290,6 @@ button:hover{
     margin-bottom: 10px;
 }
 
-
-
-
-
 div.sticky {
     position: -webkit-sticky;
     position: sticky;
@@ -303,6 +303,11 @@ div.sticky {
     top: 0;
     background-color: white;
   }
+
+.stickyx{
+    position: relative;
+    margin-top: 150px;
+}
 
 
 
@@ -394,13 +399,17 @@ td#beschreibung {
   margin-right: 5px; /* Abstand zwischen Tabelle und Scrollbalken */
 }
 
+rect.node {
+    cursor: pointer;
+  }
 
+  
 
 
 
 
 /**
-* dataviz bereich
+* dataviz Bubblechart bereich
 */
 
 
@@ -431,6 +440,10 @@ td#beschreibung {
     white-space: pre-line;
 }
 
+.table-container {
+    display: none;
+  }
+  
 
 
 

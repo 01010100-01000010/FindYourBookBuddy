@@ -185,6 +185,7 @@ function setup() {
 }
 
 function draw() {
+  cursor('auto');
   background(255);
 
   let x = Rand;
@@ -249,9 +250,12 @@ function draw() {
       }  
 
       fill(176, 123, 255, 77);
+      // Change the cursor to a pointer
+      cursor('pointer');
 
     }
-    
+
+
 
 
       
